@@ -1,10 +1,28 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var app = express();
+//var io = require('socket.io')(http);
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/templates/index.html');
+
+var chat = require('./controllers/chat');
+
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/layouts');
+app.set('view engine', 'jade');
+/*app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(perimitirCrossDomain);
+app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
+*/
+/*app.get('/', function(req, res){
+  res.sendFile(__dirname + '/templates/room.html');
 });
+
+
 
 app.post('/login',function (req,res) {
 	console.log('POST /');
@@ -16,8 +34,6 @@ app.post('/login',function (req,res) {
 
 io.on('connection', function(socket){
 
-
-
   	console.log('a user connected');
   		socket.on('disconnect', function(){
     	console.log('user disconnected');
@@ -25,12 +41,14 @@ io.on('connection', function(socket){
 
    socket.on('chat message', function(msg){
    	io.emit('chat message ',msg );
-    console.log('message: ' + msg.msg);
+    console.log('message: ' + msg);
   	});
 
 
-});
+});*/
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+app.use(chat);
+
+http.createServer(app).listen(app.get('port'), function(){
+console.log('Servidor corriendo --> ' + app.get('port'));
 });
