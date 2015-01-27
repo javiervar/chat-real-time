@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 
 app.post('/login',function (req,res) {
 	console.log('POST /');
-    console.log(req);
+    console.log(req.body);
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('thanks');
 
@@ -25,7 +25,6 @@ io.on('connection', function(socket){
 
    socket.on('chat message', function(msg){
    	io.emit('chat message ',msg );
-    console.log('message: ' + msg.msg);
   	});
 
 
