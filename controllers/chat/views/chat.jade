@@ -1,15 +1,12 @@
 doctype
 html
   head
-    title #{title} - My Site
+    title Chat- #{user}
     link(rel='stylesheet', href='/csss/style.css')
     script(type='text/javascript' src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/pbkdf2.js")
-    script(type='text/javascript' src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js")
     script(type='text/javascript' src="http://code.jquery.com/jquery-1.11.1.js")
     script(type='text/javascript' src='js/script.js')
   body
-  p Nombre:
-  input(type="text" id="user" name="user")
-  p Pass:
-  input(type="password" id="pass" name="pass")
-  button(type="submit" onclick="login()") Enviar
+  ul
+  input(type="text" id="message")
+  button(type='button') send  
