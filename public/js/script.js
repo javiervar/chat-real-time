@@ -1,5 +1,5 @@
 function login () {
-
+	var form=document.getElementById('form');
 	var user=document.getElementById('user').value;
 	var pass=document.getElementById('pass').value;
 	var encrypted = CryptoJS.AES.encrypt("Message", "Secret Passphrase");
@@ -7,14 +7,8 @@ function login () {
 	console.log(encrypted);
 	console.log(CryptoJS.enc.Latin1.stringify(decrypted));
 	var data="user="+user+"&pass="+pass;
-	$.ajax({
-		data:  data,
-        url:   '/login',
-        type:  'post',
-        async:false,
-       success:  function (response) {
-       	console.log(response)
-       }
-	})
+
+	form.submit();
+
 }
 

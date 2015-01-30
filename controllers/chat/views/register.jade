@@ -1,0 +1,22 @@
+doctype
+html
+  head
+    title 
+    link(rel='stylesheet', href='css/style.css')
+    script(type='text/javascript' src="http://code.jquery.com/jquery-1.11.1.js")
+    script(type='text/javascript' src='js/script.js')
+  body
+  .container-register
+    form(method="POST" action="/register" id="form")
+      p Email:
+      input(type="text" id="email" name="email")
+      p Celular:
+      input(type="text" id="cel" name="cel")
+      p Contraseña:
+      input(type="text" id="pass1" name="pass1") 		
+      p Confirmacion de Contraseña:
+      input(type="password" id="pass" name="pass")
+      br
+      button(type="button" onclick="") Aceptar
+  .msg-error    
+    span #{error}
