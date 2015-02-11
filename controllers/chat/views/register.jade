@@ -1,0 +1,35 @@
+doctype
+html
+  head
+    title 
+    link(rel='stylesheet', href='css/style.css')
+    script(type='text/javascript' src="http://code.jquery.com/jquery-1.11.1.js")
+    script(type='text/javascript' src='js/script.js')
+  body(id="register-body")
+  .container-register
+    form(method="POST" action="/registerData" id="form")
+      div(id="container-form")
+        div
+          p Nombre:
+          input(type="text" id="name" name="name")
+          p Last Name:
+          input(type="text" id="lastName" name="lastName")
+          p Apodo:
+          input(type="text" id="nickName" name="nickName")  
+          p Email:
+          input(type="text" id="email" name="email") 
+          
+        div
+          p Celular:
+          input(type="text" id="cel" name="cel")    
+          p Fecha de Nacimiento:
+          input(type="date" id="date" name="date")
+          p Contraseña:
+          input(type="text" id="pass1" name="pass1") 		
+          p Confirmacion de Contraseña:  
+          input(type="password" id="pass" name="pass")
+      br
+      br
+      button(type="submit") Aceptar
+  .msg-error    
+    span #{error}

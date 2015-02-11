@@ -2,14 +2,27 @@ doctype
 html
   head
     title #{title} - My Site
-    link(rel='stylesheet', href='/csss/style.css')
+    link(rel='stylesheet', href='css/style.css')
     script(type='text/javascript' src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/pbkdf2.js")
     script(type='text/javascript' src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js")
     script(type='text/javascript' src="http://code.jquery.com/jquery-1.11.1.js")
     script(type='text/javascript' src='js/script.js')
   body
-  p Nombre:
-  input(type="text" id="user" name="user")
-  p Pass:
-  input(type="password" id="pass" name="pass")
-  button(type="submit" onclick="login()") Enviar
+  .banner(align="right")
+      
+  .container-login
+    form(method="POST" action="/login" id="form")
+      p Nombre:
+      input(type="text" id="user" name="user")
+      p Pass:
+      input(type="password" id="pass" name="pass")
+      br
+      button(type="button" onclick="login()") Enviar
+      br
+
+  .register
+    span No tienes una cuenta?  
+    a(href="/register")
+      span Registrate gratis      
+  .msg-error    
+    span #{error}
