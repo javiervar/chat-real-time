@@ -1,29 +1,27 @@
 doctype
 html(lang="en" ng-app='friends')
   head
-    title #{title}
-    link(rel='stylesheet', href='css/style.css')
+    title Chat- #{user}
+    link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/bootstrap-theme.min.css')  
-    link(rel='stylesheet', href='/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-theme.min.css')   
+    link(rel='stylesheet', href='/css/font-awesome.min.css')  
     script(type='text/javascript' src="js/libs/jquery-1.11.2.js")
     script(type='text/javascript' src="js/libs/bootstrap.min.js")
     script(type='text/javascript' src='js/libs/angular.js')
     script(type='text/javascript' src='js/angular-app.js')
-     
   body(ng-controller='friends-ctrl')
     .header
-      a(href="/listContacts")
-        <i class="fa fa-plus fa-2x new"></i>
-      a()  
+      a()
         <i class="fa fa-ellipsis-v fa-2x menu"></i>
     .friend-list
       div(class="row" style="margin:0px;")  
-        div(class="col-xs-12 col-md-6 " ng-repeat="p in person")
+        div(class="col-xs-12 col-md-6" ng-repeat="p in person")
           a(class="friends")
             div(id="image")
-            .last-message  
-              span(class="name") {{p.name}}
-              .data-message  
-                span(class="message") {{p.message}}
-                span(id="date")  {{p.date}}
+            div(class="friend-data")  
+              p {{p.name}}
+              span hablando con juansho
+          
+
+   

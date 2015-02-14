@@ -10,6 +10,12 @@ app.get('/', function(request, response) {
 	});
 });
 
+app.get('/listContacts', function(request, response) {
+	response.render('list', {
+		title: 'login',
+		
+	});
+});
 
 
 app.get('/register', function(request, response) {
@@ -68,7 +74,7 @@ app.post('/login', function(req, res) {
 				});
 		}else{
 			if (data.pass==pass) {
-				res.render('chat', {
+				res.render('contacts', {
 				user: req.body.user	
 				});
 
